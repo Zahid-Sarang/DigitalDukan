@@ -3,17 +3,19 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 
 import Home from "./pages/home/Home";
+import ProductList from "./pages/productlist/ProductList";
 
 function App() {
   return (
     <div className="App">
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/productlist" element={<ProductList />} />
         </Routes>
       </BrowserRouter>
-      </Provider>
+      {/* </Provider> */}
     </div>
   );
 }

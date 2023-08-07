@@ -1,8 +1,8 @@
-const { createSlice } = require("@reduxjs/toolkit");
+// const { createSlice } = require("@reduxjs/toolkit");
 
-const initialState = [];
+// const initialState = [];
 
-const cartSlice = createSlice({});
+// const cartSlice = createSlice({});
 
-export const {} = cartSlice.actions;
-export default cartSlice.reducer;
+// export const {} = cartSlice.actions;
+// export default cartSlice.reducer;
