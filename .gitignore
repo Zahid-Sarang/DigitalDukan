@@ -1,4 +1,8 @@
 server/.env
 client/node_modules/
 server/node_modules/
+<<<<<<< HEAD
 
+=======
+server/.env
+>>>>>>> c7820917 (Bug Fixed)
