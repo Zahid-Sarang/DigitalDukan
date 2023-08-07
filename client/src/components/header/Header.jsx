@@ -2,15 +2,18 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { Link } from "react-router-dom";
 
+import Name from "../../assets/Name.png";
+
 const Header = ({ children }) => {
   return (
     <div>
       <header className="w-full h-32 lg:h-20 bg-gray-100 sticky top-0 z-50 border-b-[1px] border-b-gray-200">
         <nav className="relative h-full px-4 mx-auto max-w-container">
+          {/* Logo */}
           <div className="flex flex-col items-center justify-between h-full lg:flex-row">
             <Link to="">
               <div className=" my-5 lg:my-0 lg:mt-0 font-bold text-[.7rem] lg:font-extrabold lg:text-[2rem]">
-                <h4>Digital-Dukaan</h4>
+                <img src={Name} alt="Logo" />
               </div>
             </Link>
 
