@@ -7,7 +7,7 @@ import Name from "../../assets/Name.png";
 const Header = ({ children }) => {
   return (
     <div>
-      <header className="w-full h-32 lg:h-20 bg-gray-100 sticky top-0 z-50 border-b-[1px] border-b-gray-200">
+      <header className="w-full h-34 lg:h-20 bg-gray-100 sticky top-0 z-50 border-b-[1px] border-b-gray-200 pb-2">
         <nav className="relative h-full px-4 mx-auto max-w-container">
           {/* Logo */}
           <div className="flex flex-col items-center justify-between h-full lg:flex-row">
@@ -19,7 +19,7 @@ const Header = ({ children }) => {
 
             {/* search */}
             <div
-              className="mb-2 lg:mb-0 lg:mt-0 flex relative  w-full lg:w-[600px] h-[50px] text-base text-[#262626 ]
+              className="mb-1 lg:mb-0 lg:mt-0 flex relative  w-full lg:w-[600px] h-[50px] text-base text-[#262626 ]
           bg-white  items-center gap-2 justify-between px-6 rounded-xl "
             >
               <input
@@ -47,7 +47,7 @@ const Header = ({ children }) => {
         </nav>
       </header>
       {/* Home page content */}
-      <main className="relative flex-grow">{children}</main>
+      <main className="relative flex-grow ">{children}</main>
     </div>
   );
 };
