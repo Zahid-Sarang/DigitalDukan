@@ -5,4 +5,8 @@ server/node_modules/
 
 =======
 server/.env
+<<<<<<< HEAD
 >>>>>>> c7820917 (Bug Fixed)
+=======
+.env
+>>>>>>> frontend
