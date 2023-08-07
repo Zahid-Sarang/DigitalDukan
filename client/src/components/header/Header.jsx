@@ -1,23 +1,24 @@
-import React from "react";
+
 
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({children}) => {
   return (
-    <header className="w-full h-20 bg-gray-100 sticky top-0 z-50 border-b-[1px] border-b-gray-200">
+    <div>
+    <header className="w-full h-32 lg:h-20 bg-gray-100 sticky top-0 z-50 border-b-[1px] border-b-gray-200">
       <nav className="relative h-full px-4 mx-auto max-w-container">
-        <div className="flex items-center justify-between h-full">
+        <div className="flex flex-col items-center justify-between h-full lg:flex-row">
           <Link to="">
-            <div className="font-bold text-[.7rem] lg:font-extrabold lg:text-[2rem]">
+            <div className=" my-5 lg:my-0 lg:mt-0 font-bold text-[.7rem] lg:font-extrabold lg:text-[2rem]">
               <h4>Digital-Dukaan</h4>
             </div>
           </Link>
 
           {/* search */}
           <div
-            className=" flex relative  w-full lg:w-[600px] h-[50px] text-base text-[#262626 ]
+            className="mb-2 lg:mb-0 lg:mt-0 flex relative  w-full lg:w-[600px] h-[50px] text-base text-[#262626 ]
           bg-white  items-center gap-2 justify-between px-6 rounded-xl "
           >
             <input
@@ -44,6 +45,10 @@ const Header = () => {
         </div>
       </nav>
     </header>
+    <main className="relative flex-grow">
+      {children}
+      </main>
+    </div>
   );
 };
 

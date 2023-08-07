@@ -1,8 +1,10 @@
 import React from 'react'
+import Header from '../../components/header/Header'
 
 const ProductList = () => {
   return (
-    <div>ProductList</div>
+    <Header> <div>ProductList</div></Header>
+   
   )
 }
 
