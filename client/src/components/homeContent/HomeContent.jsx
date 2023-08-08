@@ -7,6 +7,7 @@ import banner4 from "../../assets/banner-4.webp";
 import banner5 from "../../assets/banner-5.webp";
 import banner6 from "../../assets/banner-6.webp";
 import Category from "../category/Category";
+import Featured from "../featuredProduct/Featured";
 
 const HeroSection = () => {
   return (
@@ -61,6 +62,7 @@ const HeroSection = () => {
       {/* Category */}
       <div className="mb-12 md:mb-14 xl:mb-16 px-2.5  sm:grid-cols-9 gap-2 md:gap-2.5 max-w-[1920px] mx-auto">
         <Category />
+        <Featured />
       </div>
     </div>
   );
