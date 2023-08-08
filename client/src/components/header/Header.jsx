@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Name from "../../assets/Name.png";
 
+
 const Header = ({ children }) => {
   return (
     <div>
@@ -48,6 +49,7 @@ const Header = ({ children }) => {
       </header>
       {/* Home page content */}
       <main className="relative flex-grow ">{children}</main>
+      
     </div>
   );
 };
