@@ -8,6 +8,7 @@ import banner5 from "../../assets/banner-5.webp";
 import banner6 from "../../assets/banner-6.webp";
 import Category from "../category/Category";
 import Featured from "../featuredProduct/Featured";
+import Footer from "../footer/Footer";
 
 const HeroSection = () => {
   return (
@@ -64,6 +65,7 @@ const HeroSection = () => {
         <Category />
         <Featured />
       </div>
+      <Footer />
     </div>
   );
 };
