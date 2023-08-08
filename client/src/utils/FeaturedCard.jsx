@@ -1,5 +1,5 @@
 import React from 'react'
-import cap from "../assets/festured/2.webp";
+
 
 const FeaturedCard = ({discount,image,title,descriptions,actualPrice,discountPrice}) => {
   return (
