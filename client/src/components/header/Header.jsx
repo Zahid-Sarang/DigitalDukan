@@ -1,9 +1,9 @@
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+
 import { Link } from "react-router-dom";
 
 import Name from "../../assets/Name.png";
-
+import Cart from "../../utils/Cart";
 
 const Header = ({ children }) => {
   return (
@@ -37,19 +37,13 @@ const Header = ({ children }) => {
                   Sign In
                 </button>
               </div>
-              <div
-                className="relative flex items-center justify-center flex-shrink-0 h-auto transform focus:outline-none"
-                aria-label="cart-button"
-              >
-                <LocalMallOutlinedIcon />
-              </div>
+              <Cart />
             </div>
           </div>
         </nav>
       </header>
       {/* Home page content */}
       <main className="relative flex-grow ">{children}</main>
-      
     </div>
   );
 };

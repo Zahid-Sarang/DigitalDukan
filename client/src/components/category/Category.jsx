@@ -8,7 +8,7 @@ import CategoryContent from "../../utils/CategoryContent";
 const Category = () => {
   return (
     <div className="w-full pb-20">
-      <div className="pb-6 font-sans text-3xl font-semibold">
+      <div className="pb-6 text-3xl font-semibold">
         <h3 className="text-lg font-bold md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 text-heading">Shop By Category</h3>
       </div>
       <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lgl:grid-col-3 s-4 xl:grid-cols-5">

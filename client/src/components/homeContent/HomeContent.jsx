@@ -9,6 +9,7 @@ import banner6 from "../../assets/banner-6.webp";
 import Category from "../category/Category";
 import Featured from "../featuredProduct/Featured";
 import Footer from "../footer/Footer";
+import MobileNavbar from "../mobileNavbar/MobileNavbar";
 
 const HeroSection = () => {
   return (
@@ -66,6 +67,7 @@ const HeroSection = () => {
         <Featured />
       </div>
       <Footer />
+      <MobileNavbar />
     </div>
   );
 };

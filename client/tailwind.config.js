@@ -3,7 +3,12 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      sans: ['Roboto Slab, serif']
+      // fontFamily: {
+      //   'sans': ['Roboto', 'sans']  // Add your font name and any fallbacks
+      // },
+      boxShadow: {
+        'custom-shadow': '0 -2px 3px rgba(0,0,0,.06)'
+      }
     },
   },
   plugins: [],
