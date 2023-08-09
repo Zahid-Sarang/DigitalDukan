@@ -8,7 +8,7 @@ import FeaturedCard from "../../utils/FeaturedCard";
 const Featured = () => {
   return (
     <div className="mb-12 md:mb-14 xl:mb-16">
-      <div className="pb-6 font-sans text-3xl font-semibold">
+      <div className="pb-6 text-3xl font-semibold">
         <h3 className="text-lg font-bold md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 text-heading">
           Featured Product
         </h3>
