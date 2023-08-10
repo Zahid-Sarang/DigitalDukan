@@ -7,7 +7,9 @@ const Cart = () => {
       aria-label="cart-button"
     >
       <LocalMallOutlinedIcon />
-      <span class="absolute top-[-0.3rem] right-[-0.3rem] bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-semibold">0</span>
+      <span class="absolute top-[-0.3rem] right-[-0.3rem] bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-semibold">
+        0
+      </span>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 // ============ Component Import =========================== //
 import Header from "../../components/header/Header";
 import Product from "../../components/Product/Product";
@@ -162,7 +164,7 @@ const ProductList = () => {
                                         defaultValue={option.value}
                                         type="checkbox"
                                         defaultChecked={option.checked}
-                                        className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                                        className="w-4 h-4 text-black border-gray-300 rounded focus:ring-indigo-500"
                                       />
                                       <label
                                         htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
@@ -217,8 +219,8 @@ const ProductList = () => {
                         {sortOptions.map((option) => (
                           <Menu.Item key={option.name}>
                             {({ active }) => (
-                              <a
-                                href={option.href}
+                              <Link
+                                to={option.href}
                                 className={classNames(
                                   option.current
                                     ? "font-medium text-gray-900"
@@ -228,7 +230,7 @@ const ProductList = () => {
                                 )}
                               >
                                 {option.name}
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
                         ))}
@@ -304,7 +306,7 @@ const ProductList = () => {
                                     defaultValue={option.value}
                                     type="checkbox"
                                     defaultChecked={option.checked}
-                                    className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                                    className="w-4 h-4 text-black border-gray-300 rounded focus:ring-indigo-500"
                                   />
                                   <label
                                     htmlFor={`filter-${section.id}-${optionIdx}`}
