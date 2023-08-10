@@ -1,12 +1,16 @@
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+// ============ Component Import =========================== //
 import Footer from "../footer/Footer";
 import MobileNavbar from "../mobileNavbar/MobileNavbar";
+import Cart from "../../utils/Cart";
+// ============================================================ //
+
+// =============================== Icon & Image  Import ============================== //
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import Name from "../../assets/Name.png";
+// ================================================================================= //
 
 import { Link } from "react-router-dom";
-
-import Name from "../../assets/Name.png";
-import Cart from "../../utils/Cart";
 
 const Header = ({ children }) => {
   return (
@@ -37,7 +41,7 @@ const Header = ({ children }) => {
             <div className="justify-end flex-shrink-0 hidden item-center lg:flex gap-x-6 lg:gap-x-8 2xl:gap-x-10 ltr:ml-auto rtl:mr-auto">
               <div className="-mt-0.5 flex-shrink-0">
                 <button className="font-semibold text-white xl:text-black ">
-                  <PersonOutlineOutlinedIcon style={{fontSize:'2rem'}}/>
+                  <PersonOutlineOutlinedIcon style={{ fontSize: "2rem" }} />
                 </button>
               </div>
               <Cart />

@@ -1,9 +1,10 @@
 import React from "react";
 import bag from "../../assets/festured/1.webp";
 
+// ============ Component Import =========================== //
 import featuredCardData from "../../constent/data";
 import FeaturedCard from "../../utils/FeaturedCard";
-
+// ============ ============================================= //
 
 const Featured = () => {
   return (
@@ -46,18 +47,18 @@ const Featured = () => {
               </div>
             </div>
           </div>
-          {featuredCardData.map(card => (
-                <FeaturedCard
-                    key={card.id}
-                    discount={card.discount}
-                    image={card.image}
-                    title={card.title}
-                    descriptions={card.descriptions}
-                    actualPrice={card.actualPrice}
-                    discountPrice={card.discountPrice}
-                />
-            ))}
-          
+          {/* Other Featured Products */}
+          {featuredCardData.map((card) => (
+            <FeaturedCard
+              key={card.id}
+              discount={card.discount}
+              image={card.image}
+              title={card.title}
+              descriptions={card.descriptions}
+              actualPrice={card.actualPrice}
+              discountPrice={card.discountPrice}
+            />
+          ))}
         </div>
       </div>
     </div>

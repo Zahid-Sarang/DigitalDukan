@@ -1,8 +1,11 @@
 import React from "react";
+
+// ============ Component Import =========================== //
 import Header from "../../components/header/Header";
 import Product from "../../components/Product/Product";
+// ======================================================== //
 
-// ======================== Tailwinds Imports ======================= //
+// ================================ Tailwinds Imports =================================== //
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -13,7 +16,8 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-// ================================================================== //
+import Pagination from "../../components/pagination/Pagination";
+// ========================================================================================== //
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -40,11 +44,11 @@ const filters = [
     id: "category",
     name: "Category",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      { value: "Men's", label: "Men's", checked: false },
+      { value: "Women's", label: "Women's", checked: false },
+      { value: "Kids", label: "Kids", checked: true },
+      { value: "Sports", label: "Sports", checked: false },
+      { value: "Bags", label: "Bags", checked: false },
     ],
   },
   {
@@ -184,7 +188,7 @@ const ProductList = () => {
           <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 lg:text-4xl">
-                New Arrivals
+                All Products
               </h1>
 
               <div className="flex items-center">
@@ -324,6 +328,8 @@ const ProductList = () => {
                 </div>
               </div>
             </section>
+            {/* Pagination */}
+            <Pagination />
           </main>
         </div>
       </div>
