@@ -164,7 +164,7 @@ const ProductList = () => {
                                         defaultValue={option.value}
                                         type="checkbox"
                                         defaultChecked={option.checked}
-                                        className="w-4 h-4 text-black border-gray-300 rounded focus:ring-indigo-500"
+                                        className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                                       />
                                       <label
                                         htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
@@ -306,7 +306,7 @@ const ProductList = () => {
                                     defaultValue={option.value}
                                     type="checkbox"
                                     defaultChecked={option.checked}
-                                    className="w-4 h-4 text-black border-gray-300 rounded focus:ring-indigo-500"
+                                    className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                                   />
                                   <label
                                     htmlFor={`filter-${section.id}-${optionIdx}`}
