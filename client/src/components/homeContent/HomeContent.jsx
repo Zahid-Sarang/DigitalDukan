@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+// ===================== Image Import ==================== //
 import banner from "../../assets/banner-1.webp";
 import banner2 from "../../assets/banner-2.webp";
 import banner3 from "../../assets/banner-3.webp";
 import banner4 from "../../assets/banner-4.webp";
 import banner5 from "../../assets/banner-5.webp";
 import banner6 from "../../assets/banner-6.webp";
+// ======================================================== //
+
+
+// ============ Component Import =========================== //
 import Category from "../category/Category";
 import Featured from "../featuredProduct/Featured";
-
+// ======================================================== //
 
 const HeroSection = () => {
   return (
@@ -65,7 +71,6 @@ const HeroSection = () => {
         <Category />
         <Featured />
       </div>
-      
     </div>
   );
 };
