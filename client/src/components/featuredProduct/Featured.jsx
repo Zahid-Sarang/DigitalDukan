@@ -2,7 +2,7 @@ import React from "react";
 import bag from "../../assets/festured/1.webp";
 
 // ============ Component Import =========================== //
-import featuredCardData from "../../constent/data";
+import {featuredCardData} from "../../constent/data";
 import FeaturedCard from "../../utils/FeaturedCard";
 // ============ ============================================= //
 

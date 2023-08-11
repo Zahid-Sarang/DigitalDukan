@@ -2,43 +2,45 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const products = [
-  {
-    id: 1,
-    name: "Basic Tee",
-    href: "/productdetails",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 2,
-    name: "Basic Tee",
-    href: "/productdetails",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 3,
-    name: "Basic Tee",
-    href: "/productdetails",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  // More products...
-];
+import { products } from "../../constent/data";
+
+// const products = [
+//   {
+//     id: 1,
+//     name: "Basic Tee",
+//     href: "/productdetails",
+//     imageSrc:
+//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+//     imageAlt: "Front of men's Basic Tee in black.",
+//     price: "$35",
+//     color: "Black",
+//   },
+//   {
+//     id: 2,
+//     name: "Basic Tee",
+//     href: "/productdetails",
+//     imageSrc:
+//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+//     imageAlt: "Front of men's Basic Tee in black.",
+//     price: "$35",
+//     color: "Black",
+//   },
+//   {
+//     id: 3,
+//     name: "Basic Tee",
+//     href: "/productdetails",
+//     imageSrc:
+//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+//     imageAlt: "Front of men's Basic Tee in black.",
+//     price: "$35",
+//     color: "Black",
+//   },
+//   // More products...
+// ];
 
 const Product = () => {
   return (
-    <div className="bg-white">
+    <div className="font-sans bg-white">
       {/*  px-4 py-16 */}
       <div className="max-w-2xl px-4 py-0 mx-auto sm:px-6 sm:py-2 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
@@ -68,9 +70,15 @@ const Product = () => {
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
-                  {product.price}
-                </p>
+                <div className="flex-shrink-0 flex flex-row-reverse md:flex-col lg:flex-row-reverse 2xl:flex-col items-center md:items-end lg:items-start 2xl:items-end justify-end ltr:md:text-right rtl:md:text-left lg:ltr:text-left rtl:text-right ltr:xl:text-right rtl:xl:text-left mt-2 md:-mt-0.5 lg:mt-2 2xl:-mt-0.5 gap-2">
+                  <del className="text-sm md:text-base lg:text-sm xl:text-base 3xl:text-lg text-[#868686]">
+                    ${product.price}
+                  </del>
+                  {/* calculate the actual price after discount  */}
+                  <div class="text-heading font-segoe font-semibold text-base md:text-xl lg:text-base xl:text-xl 3xl:text-2xl 3xl:mt-0.5 ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
+                    ${Math.round(product.price * (1 - product.discount / 100))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
