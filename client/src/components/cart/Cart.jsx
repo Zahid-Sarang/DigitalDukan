@@ -35,7 +35,7 @@ const products = [
   // More products...
 ];
 
-const Cart = () => {
+const Cart = ({title,url}) => {
   return (
     <div className="px-4 mx-auto mt-5 bg-gray-100 rounded-[30px] lg:mt-20 max-w-7xl sm:px-6 lg:px-8">
       <h1 className="py-5 text-2xl font-semibold tracking-tight text-gray-900 lg:text-4xl">
@@ -107,10 +107,10 @@ const Cart = () => {
         </p>
         <div className="mt-6">
           <Link
-            href="#"
+            to={url}
             className="flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black border border-transparent rounded-md shadow-sm hover:bg-white hover:text-black"
           >
-            Checkout
+            {title}
           </Link>
         </div>
         <div className="flex justify-center mt-6 text-sm text-center text-gray-500">
