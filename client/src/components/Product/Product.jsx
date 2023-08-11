@@ -2,43 +2,22 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+// // constent data
 import { products } from "../../constent/data";
 
-// const products = [
-//   {
-//     id: 1,
-//     name: "Basic Tee",
-//     href: "/productdetails",
-//     imageSrc:
-//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-//     imageAlt: "Front of men's Basic Tee in black.",
-//     price: "$35",
-//     color: "Black",
-//   },
-//   {
-//     id: 2,
-//     name: "Basic Tee",
-//     href: "/productdetails",
-//     imageSrc:
-//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-//     imageAlt: "Front of men's Basic Tee in black.",
-//     price: "$35",
-//     color: "Black",
-//   },
-//   {
-//     id: 3,
-//     name: "Basic Tee",
-//     href: "/productdetails",
-//     imageSrc:
-//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-//     imageAlt: "Front of men's Basic Tee in black.",
-//     price: "$35",
-//     color: "Black",
-//   },
-//   // More products...
-// ];
+import { useGetProductsQuery } from "../../state/apiService";
 
 const Product = () => {
+  const { data, isLoading, isError } = useGetProductsQuery();
+
+  // fot the testing 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error fetching data</div>;
+  }
   return (
     <div className="font-sans bg-white">
       {/*  px-4 py-16 */}
@@ -63,7 +42,7 @@ const Product = () => {
               <div className="flex justify-between mt-4">
                 <div>
                   <h3 className="text-sm text-gray-700">
-                    <Link to={product.href}>
+                    <Link to="/productdetails">
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
                     </Link>
