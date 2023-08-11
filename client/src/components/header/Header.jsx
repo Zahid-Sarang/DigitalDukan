@@ -41,8 +41,8 @@ const Header = ({ children }) => {
             <div className="justify-end flex-shrink-0 hidden item-center lg:flex gap-x-6 lg:gap-x-8 2xl:gap-x-10 ltr:ml-auto rtl:mr-auto">
               <div className="-mt-0.5 flex-shrink-0">
                 <Link to='/signin'>
-                <button className="font-semibold text-white xl:text-black ">
-                  <PersonOutlineOutlinedIcon style={{ fontSize: "2rem" }} />
+                <button className="text-white  xl:text-black">
+                  <PersonOutlineOutlinedIcon style={{ fontSize: "1.7rem" }} />
                 </button>
                 </Link>
               </div>
