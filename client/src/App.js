@@ -1,7 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./store/store";
-
 import Home from "./pages/home/Home";
 import ProductList from "./pages/productlist/ProductList";
 import SignIn from "./pages/auth/SignIn";
@@ -13,7 +10,6 @@ import ProductDetailsPage from "./pages/productDetails/ProductDetailsPage";
 function App() {
   return (
     <div className="App">
-      {/* <Provider store={store}> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,7 +21,6 @@ function App() {
           <Route path="/productdetails" element={<ProductDetailsPage />} />
         </Routes>
       </BrowserRouter>
-      {/* </Provider> */}
     </div>
   );
 }
