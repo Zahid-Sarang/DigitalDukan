@@ -5,19 +5,7 @@ import { Link } from "react-router-dom";
 // // constent data
 import { products } from "../../constent/data";
 
-import { useGetProductsQuery } from "../../state/apiService";
-
 const Product = () => {
-  const { data, isLoading, isError } = useGetProductsQuery();
-
-  // fot the testing 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error fetching data</div>;
-  }
   return (
     <div className="font-sans bg-white">
       {/*  px-4 py-16 */}

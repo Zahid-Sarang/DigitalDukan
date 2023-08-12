@@ -7,8 +7,8 @@ const Register = () => {
   return (
     <div className="flex flex-col items-center justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-      <Link to='/'>
-        <img className="w-auto h-10 mx-auto" src={Name} alt="Your Company" />
+        <Link to="/">
+          <img className="w-auto h-10 mx-auto" src={Name} alt="Your Company" />
         </Link>
         <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">
           Create a new account
@@ -63,7 +63,6 @@ const Register = () => {
               >
                 Confirm Password
               </label>
-             
             </div>
             <div className="mt-2">
               <input
