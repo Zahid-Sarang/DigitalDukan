@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
-// // constent data
-import { products } from "../../constent/data";
+// Redux Import
+import {
+  selectAllProducts,
+  fetchAllProductsAsync,
+} from "../../state/product/productSlice";
 
 const Product = () => {
+  const dispatch = useDispatch();
+  const products = useSelector(selectAllProducts);
+  console.log(products);
+
+  useEffect(() => {
+    dispatch(fetchAllProductsAsync());
+  }, [dispatch]);
+
   return (
     <div className="font-sans bg-white">
       {/*  px-4 py-16 */}
@@ -23,7 +35,7 @@ const Product = () => {
               <div className="w-full overflow-hidden bg-gray-200 rounded-md aspect-h-1 aspect-w-1 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <img
                   src={product.imageSrc}
-                  alt={product.imageAlt}
+                  alt={product.name}
                   className="object-cover object-center w-full h-full lg:h-full lg:w-full"
                 />
               </div>
