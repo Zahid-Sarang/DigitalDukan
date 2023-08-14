@@ -43,7 +43,7 @@
       "price": 490,
       "descriptions": "Capture the essence of the 1950s with this retro Levi's sportswear tee, a blend of timeless style and modern comfort.",
       "category": "Men's",
-      "color": "Grey",
+      "color": "Gray",
       "size": "XL",
       "status": "in stock",
       "discount": "50"
@@ -55,7 +55,7 @@
       "price": 490,
       "descriptions": "Relive the vintage vibes with this 1950s-inspired Levi's tee, perfect for the modern man with a taste for the classics.",
       "category": "Men's",
-      "color": "Grey",
+      "color": "Gray",
       "size": "XL",
       "status": "in stock",
       "discount": "50"
@@ -247,7 +247,7 @@
       "price": 399,
       "descriptions": "Under Armour's Tech 2.0 tee: where modern engineering meets timeless design, ensuring you're always ahead of the game.",
       "category": "Kids",
-      "color": "Grey",
+      "color": "Gray",
       "size": "M",
       "status": "out of stock",
       "discount": "20"
@@ -360,6 +360,5 @@
       "status": "out of stock",
       "discount": "30"
     }
-    
   ]
 }

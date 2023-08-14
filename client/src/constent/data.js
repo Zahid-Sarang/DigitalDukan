@@ -87,7 +87,7 @@ export const products = [
     descriptions:
       "Sleek and stylish, this slim fit dress shirt offers a tailored look perfect for both office and evening wear.",
     category: "Men's",
-    color: "yellow",
+    color: "Yellow",
     size: "M",
     discount: "50",
   },
@@ -125,7 +125,7 @@ export const products = [
     descriptions:
       "Capture the essence of the 1950s with this retro Levi's sportswear tee, a blend of timeless style and modern comfort.",
     category: "Men's",
-    color: "Grey",
+    color: "Gray",
     size: "XL",
     status: "in stock",
     discount: "50",
@@ -138,7 +138,7 @@ export const products = [
     descriptions:
       "Relive the vintage vibes with this 1950s-inspired Levi's tee, perfect for the modern man with a taste for the classics.",
     category: "Men's",
-    color: "Grey",
+    color: "Gray",
     size: "XL",
     status: "in stock",
     discount: "50",
@@ -258,7 +258,7 @@ export const products = [
     descriptions:
       "Strike a balance between classic and bold with H&M's curated collection of tees for both men and women.",
     category: "Men's",
-    color: "gray",
+    color: "Gray",
     size: "S",
     status: "in stock",
     discount: "15 ",
@@ -349,7 +349,7 @@ export const products = [
     descriptions:
       "Under Armour's Tech 2.0 tee: where modern engineering meets timeless design, ensuring you're always ahead of the game.",
     category: "Kids",
-    color: "Grey",
+    color: "Gray",
     size: "M",
     status: "out of stock",
     discount: "20",
@@ -472,3 +472,5 @@ export const products = [
     discount: "30",
   },
 ];
+
+

@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 // ============ Component Import =========================== //
 import Header from "../../components/header/Header";
 import Product from "../../components/Product/Product";
+import Pagination from "../../components/pagination/Pagination";
 // ======================================================== //
+
+import { useDispatch } from "react-redux";
+import { fetchProductsByFiltersAsync } from "../../state/product/productSlice";
 
 // ================================ Tailwinds Imports =================================== //
 import { Fragment, useState } from "react";
@@ -18,15 +22,13 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import Pagination from "../../components/pagination/Pagination";
+import { useEffect } from "react";
 // ========================================================================================== //
 
 const sortOptions = [
-  { name: "Most Popular", href: "#", current: true },
-  { name: "Best Rating", href: "#", current: false },
-  { name: "Newest", href: "#", current: false },
-  { name: "Price: Low to High", href: "#", current: false },
-  { name: "Price: High to Low", href: "#", current: false },
+  { name: "Best Rating", sort: "rating", order: "desc", current: false },
+  { name: "Price: Low to High", sort: "price", order: "asc", current: false },
+  { name: "Price: High to Low", sort: "price", order: "desc", current: false },
 ];
 
 const filters = [
@@ -34,12 +36,19 @@ const filters = [
     id: "color",
     name: "Color",
     options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
+      { value: "Yellow", label: "Yellow", checked: false },
+      { value: "Blue", label: "Blue", checked: false },
+      { value: "Red", label: "Red", checked: true },
+      { value: "Gray", label: "Gray", checked: false },
+      { value: "White", label: "White", checked: false },
+      { value: "Black", label: "Black", checked: false },
+      { value: "Green", label: "Green", checked: false },
+      { value: "Pink", label: "Pink", checked: false },
+      { value: "Brown", label: "Brown", checked: false },
+      { value: "Purple", label: "Purple", checked: false },
+      { value: "Orange", label: "Orange", checked: false },
+      { value: "Olive", label: "Olive", checked: false },
+      { value: "Navy", label: "Navy", checked: false },
     ],
   },
   {
@@ -57,12 +66,10 @@ const filters = [
     id: "size",
     name: "Size",
     options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
+      { value: "S", label: "S", checked: false },
+      { value: "M", label: "M", checked: true },
+      { value: "L", label: "L", checked: false },
+      { value: "XL", label: "XL", checked: false },
     ],
   },
 ];
@@ -73,6 +80,30 @@ function classNames(...classes) {
 
 const ProductList = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const dispatch = useDispatch();
+  const [filter, setFilter] = useState({});
+
+  // Function for filter the products
+  const handleFilter = (e, section, option) => {
+    const newFilter = { ...filter };
+    if (e.target.checked) {
+      newFilter[section.id] = option.value;
+    } else {
+      delete newFilter[section.id];
+    }
+    setFilter(newFilter);
+  };
+
+  // Function for Sort the Product
+  const handleSort = (e, option) => {
+    const newFilter = { ...filter, _sort: option.sort, _order: option.order };
+    setFilter(newFilter);
+  };
+
+  useEffect(() => {
+    dispatch(fetchProductsByFiltersAsync(filter));
+  }, [dispatch, filter]);
+
   return (
     <Header>
       <div className="bg-white ">
@@ -163,6 +194,9 @@ const ProductList = () => {
                                         name={`${section.id}[]`}
                                         defaultValue={option.value}
                                         type="checkbox"
+                                        onChange={(e) =>
+                                          handleFilter(e, section, option)
+                                        }
                                         defaultChecked={option.checked}
                                         className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                                       />
@@ -219,8 +253,8 @@ const ProductList = () => {
                         {sortOptions.map((option) => (
                           <Menu.Item key={option.name}>
                             {({ active }) => (
-                              <Link
-                                to={option.href}
+                              <p
+                                onClick={(e) => handleSort(e, option)}
                                 className={classNames(
                                   option.current
                                     ? "font-medium text-gray-900"
@@ -230,7 +264,7 @@ const ProductList = () => {
                                 )}
                               >
                                 {option.name}
-                              </Link>
+                              </p>
                             )}
                           </Menu.Item>
                         ))}
@@ -305,6 +339,9 @@ const ProductList = () => {
                                     name={`${section.id}[]`}
                                     defaultValue={option.value}
                                     type="checkbox"
+                                    onChange={(e) =>
+                                      handleFilter(e, section, option)
+                                    }
                                     defaultChecked={option.checked}
                                     className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                                   />
