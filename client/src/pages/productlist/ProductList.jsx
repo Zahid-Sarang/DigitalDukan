@@ -38,7 +38,7 @@ const filters = [
     options: [
       { value: "Yellow", label: "Yellow", checked: false },
       { value: "Blue", label: "Blue", checked: false },
-      { value: "Red", label: "Red", checked: true },
+      { value: "Red", label: "Red", checked: false },
       { value: "Gray", label: "Gray", checked: false },
       { value: "White", label: "White", checked: false },
       { value: "Black", label: "Black", checked: false },
@@ -57,7 +57,7 @@ const filters = [
     options: [
       { value: "Men's", label: "Men's", checked: false },
       { value: "Women's", label: "Women's", checked: false },
-      { value: "Kids", label: "Kids", checked: true },
+      { value: "Kids", label: "Kids", checked: false },
       { value: "Sports", label: "Sports", checked: false },
       { value: "Bags", label: "Bags", checked: false },
     ],
@@ -67,7 +67,7 @@ const filters = [
     name: "Size",
     options: [
       { value: "S", label: "S", checked: false },
-      { value: "M", label: "M", checked: true },
+      { value: "M", label: "M", checked: false },
       { value: "L", label: "L", checked: false },
       { value: "XL", label: "XL", checked: false },
     ],
@@ -82,27 +82,37 @@ const ProductList = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const dispatch = useDispatch();
   const [filter, setFilter] = useState({});
+  const [sort, setSort] = useState({});
 
   // Function for filter the products
   const handleFilter = (e, section, option) => {
     const newFilter = { ...filter };
     if (e.target.checked) {
-      newFilter[section.id] = option.value;
+      if (newFilter[section.id]) {
+        newFilter[section.id].push(option.value);
+      } else {
+        newFilter[section.id] = [option.value];
+      }
     } else {
-      delete newFilter[section.id];
+      const index = newFilter[section.id].findIndex(
+        (el) => el === option.value
+      );
+      newFilter[section.id].splice(index, 1);
     }
+    console.log({ newFilter });
     setFilter(newFilter);
   };
 
   // Function for Sort the Product
   const handleSort = (e, option) => {
-    const newFilter = { ...filter, _sort: option.sort, _order: option.order };
-    setFilter(newFilter);
+    const newSort = { _sort: option.sort, _order: option.order };
+    console.log({ sort });
+    setSort(newSort);
   };
 
   useEffect(() => {
-    dispatch(fetchProductsByFiltersAsync(filter));
-  }, [dispatch, filter]);
+    dispatch(fetchProductsByFiltersAsync({ filter, sort }));
+  }, [dispatch, filter, sort]);
 
   return (
     <Header>
