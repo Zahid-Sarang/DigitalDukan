@@ -1,6 +1,5 @@
-import React from "react";
-
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { ITEMS_PER_PAGE } from "../../constent/data";
 
 // ============ Component Import =========================== //
 import Header from "../../components/header/Header";
@@ -8,8 +7,19 @@ import Product from "../../components/Product/Product";
 import Pagination from "../../components/pagination/Pagination";
 // ======================================================== //
 
-import { useDispatch } from "react-redux";
-import { fetchProductsByFiltersAsync } from "../../state/product/productSlice";
+// ================================ Redux Toolkit Imports ================================== //
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchCategoriesAsync,
+  fetchColorAsync,
+  fetchProductsByFiltersAsync,
+  fetchSizeAsync,
+  selectCategories,
+  selectColor,
+  selectSize,
+  selectTotalItems,
+} from "../../state/product/productSlice";
+// ============================================================================================ //
 
 // ================================ Tailwinds Imports =================================== //
 import { Fragment, useState } from "react";
@@ -22,56 +32,12 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import { useEffect } from "react";
 // ========================================================================================== //
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
   { name: "Price: High to Low", sort: "price", order: "desc", current: false },
-];
-
-const filters = [
-  {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "Yellow", label: "Yellow", checked: false },
-      { value: "Blue", label: "Blue", checked: false },
-      { value: "Red", label: "Red", checked: false },
-      { value: "Gray", label: "Gray", checked: false },
-      { value: "White", label: "White", checked: false },
-      { value: "Black", label: "Black", checked: false },
-      { value: "Green", label: "Green", checked: false },
-      { value: "Pink", label: "Pink", checked: false },
-      { value: "Brown", label: "Brown", checked: false },
-      { value: "Purple", label: "Purple", checked: false },
-      { value: "Orange", label: "Orange", checked: false },
-      { value: "Olive", label: "Olive", checked: false },
-      { value: "Navy", label: "Navy", checked: false },
-    ],
-  },
-  {
-    id: "category",
-    name: "Category",
-    options: [
-      { value: "Men's", label: "Men's", checked: false },
-      { value: "Women's", label: "Women's", checked: false },
-      { value: "Kids", label: "Kids", checked: false },
-      { value: "Sports", label: "Sports", checked: false },
-      { value: "Bags", label: "Bags", checked: false },
-    ],
-  },
-  {
-    id: "size",
-    name: "Size",
-    options: [
-      { value: "S", label: "S", checked: false },
-      { value: "M", label: "M", checked: false },
-      { value: "L", label: "L", checked: false },
-      { value: "XL", label: "XL", checked: false },
-    ],
-  },
 ];
 
 function classNames(...classes) {
@@ -81,8 +47,31 @@ function classNames(...classes) {
 const ProductList = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const dispatch = useDispatch();
+  const totalItems = useSelector(selectTotalItems);
+  const category = useSelector(selectCategories);
+  const color = useSelector(selectColor);
+  const size = useSelector(selectSize);
+  const filters = [
+    {
+      id: "color",
+      name: "Color",
+      options: color,
+    },
+    {
+      id: "category",
+      name: "Category",
+      options: category,
+    },
+    {
+      id: "size",
+      name: "Size",
+      options: size,
+    },
+  ];
+
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
+  const [page, setPage] = useState(1);
 
   // Function for filter the products
   const handleFilter = (e, section, option) => {
@@ -110,10 +99,27 @@ const ProductList = () => {
     setSort(newSort);
   };
 
-  useEffect(() => {
-    dispatch(fetchProductsByFiltersAsync({ filter, sort }));
-  }, [dispatch, filter, sort]);
+  // Function For Pagination
+  const handlePagination = (page) => {
+    console.log({ page });
+    setPage(page);
+  };
 
+  useEffect(() => {
+    const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
+    dispatch(fetchProductsByFiltersAsync({ filter, sort, pagination }));
+  }, [dispatch, filter, sort, page]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [totalItems, sort]);
+
+  // useeffect for filters
+  useEffect(() => {
+    dispatch(fetchCategoriesAsync());
+    dispatch(fetchColorAsync());
+    dispatch(fetchSizeAsync());
+  }, []);
   return (
     <Header>
       <div className="bg-white ">
@@ -378,7 +384,12 @@ const ProductList = () => {
               </div>
             </section>
             {/* Pagination */}
-            <Pagination />
+            <Pagination
+              handlePage={handlePagination}
+              page={page}
+              setPage={setPage}
+              totalItems={totalItems}
+            />
           </main>
         </div>
       </div>

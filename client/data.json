@@ -360,5 +360,121 @@
       "status": "out of stock",
       "discount": "30"
     }
+  ],
+  "color": [
+    {
+      "value": "Yellow",
+      "label": "Yellow",
+      "checked": false
+    },
+    {
+      "value": "Blue",
+      "label": "Blue",
+      "checked": false
+    },
+    {
+      "value": "Red",
+      "label": "Red",
+      "checked": false
+    },
+    {
+      "value": "Gray",
+      "label": "Gray",
+      "checked": false
+    },
+    {
+      "value": "White",
+      "label": "White",
+      "checked": false
+    },
+    {
+      "value": "Black",
+      "label": "Black",
+      "checked": false
+    },
+    {
+      "value": "Green",
+      "label": "Green",
+      "checked": false
+    },
+    {
+      "value": "Pink",
+      "label": "Pink",
+      "checked": false
+    },
+    {
+      "value": "Brown",
+      "label": "Brown",
+      "checked": false
+    },
+    {
+      "value": "Purple",
+      "label": "Purple",
+      "checked": false
+    },
+    {
+      "value": "Orange",
+      "label": "Orange",
+      "checked": false
+    },
+    {
+      "value": "Olive",
+      "label": "Olive",
+      "checked": false
+    },
+    {
+      "value": "Navy",
+      "label": "Navy",
+      "checked": false
+    }
+  ],
+  "category": [
+    {
+      "value": "Men's",
+      "label": "Men's",
+      "checked": false
+    },
+    {
+      "value": "Women's",
+      "label": "Women's",
+      "checked": false
+    },
+    {
+      "value": "Kids",
+      "label": "Kids",
+      "checked": false
+    },
+    {
+      "value": "Sports",
+      "label": "Sports",
+      "checked": false
+    },
+    {
+      "value": "Bags",
+      "label": "Bags",
+      "checked": false
+    }
+  ],
+  "size": [
+    {
+      "value": "S",
+      "label": "S",
+      "checked": false
+    },
+    {
+      "value": "M",
+      "label": "M",
+      "checked": false
+    },
+    {
+      "value": "L",
+      "label": "L",
+      "checked": false
+    },
+    {
+      "value": "XL",
+      "label": "XL",
+      "checked": false
+    }
   ]
 }
