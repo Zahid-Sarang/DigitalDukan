@@ -12,7 +12,6 @@ import {
 const Product = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
-  console.log(products);
 
   useEffect(() => {
     dispatch(fetchAllProductsAsync());

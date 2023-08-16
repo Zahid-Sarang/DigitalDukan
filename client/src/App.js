@@ -9,7 +9,7 @@ import ProductDetailsPage from "./pages/productDetails/ProductDetailsPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="font-sans">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

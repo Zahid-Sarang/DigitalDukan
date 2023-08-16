@@ -66,10 +66,13 @@ export function fetchSize() {
 
 // Api call for selected product details
 
-export function fetchProduct(id) {
-  return new Promise(async (resolve) => {
-    const response = await fetch(`http://localhost:8000/${id}`);
-    const data = await response.json();
-    resolve({ data });
-  });
+export function fetchProductById(id) {
+  return new Promise(async (resolve) =>{
+    //TODO: we will not hard-code server URL here
+    const response = await fetch('http://localhost:8000/products/'+id) 
+    const data = await response.json()
+    
+    resolve({data})
+  }
+  );
 }
