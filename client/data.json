@@ -7,7 +7,7 @@
       "price": 49.9,
       "descriptions": "Sleek and stylish...",
       "category": "Men's",
-      "color": "yellow",
+      "color": "Yellow",
       "size": "M",
       "status": "in stock",
       "discount": "50"
@@ -163,7 +163,7 @@
       "price": 110,
       "descriptions": "Strike a balance between classic and bold with H&M's curated collection of tees for both men and women.",
       "category": "Men's",
-      "color": "gray",
+      "color": "Gray",
       "size": "S",
       "status": "in stock",
       "discount": "15 "
@@ -475,6 +475,18 @@
       "value": "XL",
       "label": "XL",
       "checked": false
+    }
+  ],
+  "users": [
+    {
+      "email": "zahid@gmail.com",
+      "password": "Zahid@123",
+      "id": 1
+    },
+    {
+      "email": "zahid1@gmail.com",
+      "password": "Zahid@123",
+      "id": 2
     }
   ]
 }
