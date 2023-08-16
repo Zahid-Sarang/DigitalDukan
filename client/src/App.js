@@ -9,7 +9,7 @@ import ProductDetailsPage from "./pages/productDetails/ProductDetailsPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="font-sans">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/cart" element={<CartDetails />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/productdetails" element={<ProductDetailsPage />} />
+          <Route path="/productdetails/:id" element={<ProductDetailsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -474,3 +474,4 @@ export const products = [
 ];
 
 
+export const ITEMS_PER_PAGE = 6
