@@ -11,6 +11,8 @@ import {
 } from "../../state/product/productSlice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { addToCartAsync } from "../../state/cart/cartSlice";
+import { selectLoggedInUser } from "../../state/auth/authSlice";
 //================================================================================//
 
 // const product = {
@@ -91,6 +93,7 @@ const sizes = [
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const product = useSelector(selectProductById);
+  const user = useSelector(selectLoggedInUser);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const params = useParams();
@@ -98,6 +101,14 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(fetchProductByIdAsync(params.id));
   }, [dispatch, params.id]);
+
+  // add to cart function
+
+  const handleCart = (e) => {
+    e.preventDefault();
+    dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
+  };
+
   return (
     <div className="bg-white ">
       {product ? (
@@ -305,6 +316,7 @@ const ProductDetails = () => {
                 </div>
 
                 <button
+                  onClick={handleCart}
                   type="submit"
                   className="flex items-center justify-center w-full px-8 py-3 mt-10 text-base font-medium text-white bg-black border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 hover:text-black hover:bg-white hover:border-2 hover:border-black"
                 >

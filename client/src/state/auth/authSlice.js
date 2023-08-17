@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { createUser, checkUser } from "./authApi";
+import { createUser, checkUser, } from "./authApi";
 
 const initialState = {
   loggedInUser: null,
