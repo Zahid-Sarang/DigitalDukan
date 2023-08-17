@@ -1,41 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectItems,
+  updateCartAsync,
+  deleteItemFromCartAsync,
+} from "../../state/cart/cartSlice";
 // ============================== Tailwind Import ========================== //
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+// import { Fragment, useState } from "react";
+// import { Dialog, Transition } from "@headlessui/react";
+// import { XMarkIcon } from "@heroicons/react/24/outline";
 // ========================================================================= //
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    "imageSrc":
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    "imageSrc":
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
+const Cart = ({ title, url }) => {
+  const items = useSelector(selectItems);
+  const dispatch = useDispatch();
+  const totalAmount = items.reduce(
+    (amount, item) =>
+      Math.round(item.price * (1 - item.discount / 100)) * item.quantity +
+      amount,
+    0
+  );
+  const totalItems = items.reduce((total, item) => item.quantity + total, 0);
 
-const Cart = ({title,url}) => {
+  // function for incress the product quntity
+
+  const handleQuantity = (e, items) => {
+    dispatch(updateCartAsync({ ...items, quantity: +e.target.value }));
+  };
+
+  const handleRemove = (e, id) => {
+    dispatch(deleteItemFromCartAsync(id));
+  };
+
   return (
     <div className="px-4 mx-auto mt-5 bg-gray-100 rounded-[30px] lg:mt-20 max-w-7xl sm:px-6 lg:px-8">
       <h1 className="py-5 text-2xl font-semibold tracking-tight text-gray-900 lg:text-4xl">
@@ -44,27 +42,35 @@ const Cart = ({title,url}) => {
       <div className="px-4 py-6 border-t border-gray-200 sm:px-6">
         <div className="flow-root">
           <ul className="-my-6 divide-y divide-gray-200">
-            {products.map((product) => (
-              <li key={product.id} className="flex py-6">
+            {items.map((items) => (
+              <li key={items.id} className="flex py-6">
                 <div className="flex-shrink-0 w-24 h-24 overflow-hidden border border-gray-200 rounded-md">
                   <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={items.imageSrc}
+                    alt={items.name}
                     className="object-cover object-center w-full h-full"
                   />
                 </div>
 
                 <div className="flex flex-col flex-1 ml-4">
                   <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
+                    <div className="flex justify-between font-medium text-gray-900 xt-base">
                       <h3>
-                        <a href={product.href}>{product.name}</a>
+                        <Link to={`/productdetails/${items.id}`}>
+                          {items.name}
+                        </Link>
                       </h3>
-                      <p className="ml-4">{product.price}</p>
+                      <div>
+                        <p className="ml-4">
+                          $
+                          {Math.round(items.price * (1 - items.discount / 100))}
+                        </p>
+                        <p className="text-xl tracking-tight text-gray-400 line-through">
+                          ${items.price}
+                        </p>
+                      </div>
                     </div>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {product.color}
-                    </p>
+                    <p className="mt-1 text-sm text-gray-500">{items.color}</p>
                   </div>
                   <div className="flex items-end justify-between flex-1 text-sm">
                     <div className="text-gray-500">
@@ -75,14 +81,22 @@ const Cart = ({title,url}) => {
                         Qty
                       </label>
 
-                      <select className="ml-2 border-none rounded-sm">
+                      <select
+                        onChange={(e) => handleQuantity(e, items)}
+                        value={items.quantity}
+                        className="ml-2 border-none rounded-sm"
+                      >
                         <option value="1">1</option>
                         <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                       </select>
                     </div>
 
                     <div className="flex">
                       <button
+                        onClick={(e) => handleRemove(e, items.id)}
                         type="button"
                         className="font-medium text-gray-700 hover:text-black"
                       >
@@ -100,11 +114,13 @@ const Cart = ({title,url}) => {
       <div className="px-4 py-6 border-t border-gray-200 sm:px-6">
         <div className="flex justify-between text-base font-medium text-gray-900">
           <p>Subtotal</p>
-          <p>$262.00</p>
+          <p>${totalAmount}</p>
         </div>
-        <p className="mt-0.5 text-sm text-gray-500">
-          Shipping and taxes calculated at checkout.
-        </p>
+        <div className="flex justify-between">
+          <p className="mt-1 text-xl text-gray-500">
+            Total Items In Cart: {totalItems}
+          </p>
+        </div>
         <div className="mt-6">
           <Link
             to={url}

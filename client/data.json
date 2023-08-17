@@ -487,6 +487,60 @@
       "email": "zahid1@gmail.com",
       "password": "Zahid@123",
       "id": 2
+    },
+    {
+      "email": "zahid@gmail.com",
+      "password": "Zahid@123",
+      "id": 3
+    },
+    {
+      "email": "zahid2@gmail.com",
+      "password": "Zahid@123",
+      "id": 4
+    }
+  ],
+  "cart": [
+    {
+      "id": 8,
+      "imageSrc": "../assets/products/n1.jpg",
+      "name": "Slim Fit Dress Shirt",
+      "price": 120,
+      "descriptions": "Exude sophistication in Calvin Klein's slim fit dress shirt, tailor-made for those moments that demand a refined touch.",
+      "category": "Sports",
+      "color": "White",
+      "size": "L",
+      "status": "in stock",
+      "discount": "30 ",
+      "quantity": 1,
+      "user": 4
+    },
+    {
+      "id": 10,
+      "imageSrc": "../assets/products/n3.jpg",
+      "name": "Women's Badge of Sport Tee",
+      "price": 300,
+      "descriptions": "Adidas' Badge of Sport Tee is where fashion meets passion for sports, designed for women who love to stand out.",
+      "category": "Women's",
+      "color": "Pink",
+      "size": "M",
+      "status": "in stock",
+      "discount": "10 ",
+      "quantity": 1,
+      "user": 4
+    },
+    {
+      "id": 1,
+      "imageSrc": "src/assets/products/f2.jpg",
+      "name": "Men's Dri-FIT T-Shirt",
+      "price": 240,
+      "descriptions": "Stay cool and dry during workouts with this men's Dri-FIT T-shirt, engineered for maximum breathability and performance.",
+      "category": "Sports",
+      "color": "Blue",
+      "size": "L",
+      "status": "in stock",
+      "discount": "50",
+      "quantity": 3,
+      "user": 1
     }
   ]
 }
