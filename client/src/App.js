@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchItemsByUserIdAsync } from "./state/cart/cartSlice";
 import { selectLoggedInUser } from "./state/auth/authSlice";
+import OrderSuccess from "./pages/SuccessPage";
 function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
@@ -55,6 +56,14 @@ function App() {
             }
           />
           <Route path="*" element={<PageNotFound />}></Route>
+          <Route
+            path="/order-success/:id"
+            element={
+              <Protected>
+                <OrderSuccess />
+              </Protected>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

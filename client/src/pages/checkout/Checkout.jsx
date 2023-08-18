@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Navigate } from "react-router-dom";
 //=========================== Component Import =====================//
 import Cart from "../../components/cart/Cart";
 import Header from "../../components/header/Header";
@@ -8,10 +8,14 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../../state/auth/authSlice";
 import { updateUserAsync } from "../../state/usersData/usersDataSlice";
+import { selectCurrentOrder } from "../../state/orders/ordersSlice";
+import { selectItems } from "../../state/cart/cartSlice";
 import { useState } from "react";
 
 const Checkout = () => {
   const user = useSelector(selectLoggedInUser);
+  const currentOrder = useSelector(selectCurrentOrder);
+  const items = useSelector(selectItems);
   const dispatch = useDispatch();
   const {
     register,
@@ -35,6 +39,7 @@ const Checkout = () => {
 
   return (
     <Header>
+     
       <div className="px-4 mx-auto mt-10 max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="px-10 pt-4 bg-gray-100 rounded-[30px] lg:col-span-3">
