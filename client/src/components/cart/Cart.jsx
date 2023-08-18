@@ -7,13 +7,15 @@ import {
   updateCartAsync,
   deleteItemFromCartAsync,
 } from "../../state/cart/cartSlice";
+
+import { createOrderAsync } from "../../state/orders/ordersSlice";
 // ============================== Tailwind Import ========================== //
 // import { Fragment, useState } from "react";
 // import { Dialog, Transition } from "@headlessui/react";
 // import { XMarkIcon } from "@heroicons/react/24/outline";
 // ========================================================================= //
 
-const Cart = ({ title, url }) => {
+const Cart = ({ title, url,selectedAddress,user,paymentMethod }) => {
   const items = useSelector(selectItems);
   const dispatch = useDispatch();
   const totalAmount = items.reduce(
@@ -32,6 +34,15 @@ const Cart = ({ title, url }) => {
 
   const handleRemove = (e, id) => {
     dispatch(deleteItemFromCartAsync(id));
+  };
+
+  const handleOrder = (e) => {
+    const order = {items, totalAmount, totalItems, user, paymentMethod, selectedAddress}
+    console.log(order)
+    dispatch(createOrderAsync(order))
+    //TODO : Redirect to order-success page
+    //TODO : clear cart after order
+    //TODO : on server change the stock number of items
   };
 
   return (
@@ -122,12 +133,21 @@ const Cart = ({ title, url }) => {
           </p>
         </div>
         <div className="mt-6">
-          <Link
-            to={url}
-            className="flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black border border-transparent rounded-md shadow-sm hover:bg-white hover:text-black"
-          >
-            {title}
-          </Link>
+          {user ? (
+            <div
+              onClick={handleOrder}
+              className="flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black border border-transparent rounded-md shadow-sm cursor-pointer hover:bg-white hover:text-black"
+            >
+              {title}
+            </div>
+          ) : (
+            <Link
+              to={url}
+              className="flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black border border-transparent rounded-md shadow-sm hover:bg-white hover:text-black"
+            >
+              {title}
+            </Link>
+          )}
         </div>
         <div className="flex justify-center mt-6 text-sm text-center text-gray-500">
           <Link to="/productlist">
