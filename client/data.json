@@ -481,22 +481,51 @@
     {
       "email": "zahid@gmail.com",
       "password": "Zahid@123",
-      "id": 1
-    },
-    {
-      "email": "zahid1@gmail.com",
-      "password": "Zahid@123",
-      "id": 2
-    },
-    {
-      "email": "zahid@gmail.com",
-      "password": "Zahid@123",
-      "id": 3
+      "id": 1,
+      "addresses": [
+        {
+          "name": "ABBAS SARANG",
+          "email": "zahidsarang95@gmail.com",
+          "phone": "9619382967",
+          "street": "1, Taloja Phase 1 Road",
+          "city": "Navi Mumbai",
+          "state": "Maharashtra",
+          "pinCode": "410208"
+        },
+        {
+          "name": "ABBAS SARANG",
+          "email": "zahidsarang95@gmail.com",
+          "phone": "9619382967",
+          "street": "1, Taloja Phase 1 Road",
+          "city": "Navi Mumbai",
+          "state": "Maharashtra",
+          "pinCode": "410208"
+        },
+        {
+          "name": "ABBAS SARANG",
+          "email": "zahidsarang95@gmail.com",
+          "phone": "9619382967",
+          "street": "1, Taloja Phase 1 Road",
+          "city": "Navi Mumbai",
+          "state": "Maharashtra",
+          "pinCode": "410208"
+        },
+        {
+          "name": "Zahid SARANG",
+          "email": "zahidsarang95@gmail.com",
+          "phone": "9619382967",
+          "street": "1, Taloja Phase 1 Road",
+          "city": "Navi Mumbai",
+          "state": "Maharashtra",
+          "pinCode": "410208"
+        }
+      ]
     },
     {
       "email": "zahid2@gmail.com",
       "password": "Zahid@123",
-      "id": 4
+      "id": 4,
+      "addresses": []
     }
   ],
   "cart": [
@@ -529,18 +558,196 @@
       "user": 4
     },
     {
-      "id": 1,
-      "imageSrc": "src/assets/products/f2.jpg",
-      "name": "Men's Dri-FIT T-Shirt",
-      "price": 240,
-      "descriptions": "Stay cool and dry during workouts with this men's Dri-FIT T-shirt, engineered for maximum breathability and performance.",
-      "category": "Sports",
-      "color": "Blue",
-      "size": "L",
+      "id": 11,
+      "imageSrc": "https://images.pexels.com/photos/17715610/pexels-photo-17715610/free-photo-of-art-building-architecture-historical.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.jpeg",
+      "name": "Slim Fit Dress Shirt",
+      "price": 49.9,
+      "descriptions": "Sleek and stylish...",
+      "category": "Men's",
+      "color": "Yellow",
+      "size": "M",
       "status": "in stock",
       "discount": "50",
       "quantity": 3,
       "user": 1
+    },
+    {
+      "imageSrc": "https://images.pexels.com/photos/17715610/pexels-photo-17715610/free-photo-of-art-building-architecture-historical.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.jpeg",
+      "name": "Slim Fit Dress Shirt",
+      "price": 49.9,
+      "descriptions": "Sleek and stylish...",
+      "category": "Men's",
+      "color": "Yellow",
+      "size": "M",
+      "status": "in stock",
+      "discount": "50",
+      "quantity": 1,
+      "user": 4,
+      "id": 13
+    }
+  ],
+  "orders": [
+    {
+      "items": [
+        {
+          "id": 11,
+          "imageSrc": "https://images.pexels.com/photos/17715610/pexels-photo-17715610/free-photo-of-art-building-architecture-historical.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.jpeg",
+          "name": "Slim Fit Dress Shirt",
+          "price": 49.9,
+          "descriptions": "Sleek and stylish...",
+          "category": "Men's",
+          "color": "Yellow",
+          "size": "M",
+          "status": "in stock",
+          "discount": "50",
+          "quantity": 2,
+          "user": 1
+        },
+        {
+          "imageSrc": "src/assets/products/f2.jpg",
+          "name": "Men's Dri-FIT T-Shirt",
+          "price": 240,
+          "descriptions": "Stay cool and dry during workouts with this men's Dri-FIT T-shirt, engineered for maximum breathability and performance.",
+          "category": "Sports",
+          "color": "Blue",
+          "size": "L",
+          "status": "in stock",
+          "discount": "50",
+          "quantity": 1,
+          "user": 1,
+          "id": 14
+        }
+      ],
+      "totalAmount": 170,
+      "totalItems": 3,
+      "user": {
+        "email": "zahid@gmail.com",
+        "password": "Zahid@123",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "Zahid SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          }
+        ]
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Zahid SARANG",
+        "email": "zahidsarang95@gmail.com",
+        "phone": "9619382967",
+        "street": "1, Taloja Phase 1 Road",
+        "city": "Navi Mumbai",
+        "state": "Maharashtra",
+        "pinCode": "410208"
+      },
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "id": 11,
+          "imageSrc": "https://images.pexels.com/photos/17715610/pexels-photo-17715610/free-photo-of-art-building-architecture-historical.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.jpeg",
+          "name": "Slim Fit Dress Shirt",
+          "price": 49.9,
+          "descriptions": "Sleek and stylish...",
+          "category": "Men's",
+          "color": "Yellow",
+          "size": "M",
+          "status": "in stock",
+          "discount": "50",
+          "quantity": 3,
+          "user": 1
+        }
+      ],
+      "totalAmount": 75,
+      "totalItems": 3,
+      "user": {
+        "email": "zahid@gmail.com",
+        "password": "Zahid@123",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "Zahid SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          }
+        ]
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Zahid SARANG",
+        "email": "zahidsarang95@gmail.com",
+        "phone": "9619382967",
+        "street": "1, Taloja Phase 1 Road",
+        "city": "Navi Mumbai",
+        "state": "Maharashtra",
+        "pinCode": "410208"
+      },
+      "id": 2
     }
   ]
 }
