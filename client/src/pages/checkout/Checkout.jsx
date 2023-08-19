@@ -7,7 +7,7 @@ import Header from "../../components/header/Header";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../../state/auth/authSlice";
-import { updateUserAsync } from "../../state/usersData/usersDataSlice";
+import { updateUserAsync } from "../../state/userInfo/UserInfoSlice";
 import { selectCurrentOrder } from "../../state/orders/ordersSlice";
 import { selectItems } from "../../state/cart/cartSlice";
 import { useState } from "react";

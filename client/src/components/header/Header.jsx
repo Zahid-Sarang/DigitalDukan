@@ -3,7 +3,8 @@ import Footer from "../footer/Footer";
 import MobileNavbar from "../mobileNavbar/MobileNavbar";
 import Cart from "../../utils/Cart";
 // ============================================================ //
-
+import { selectLoggedInUser } from "../../state/auth/authSlice";
+import { useSelector } from "react-redux";
 // =============================== Icon & Image  Import ============================== //
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
@@ -13,6 +14,7 @@ import Name from "../../assets/Name.png";
 import { Link } from "react-router-dom";
 
 const Header = ({ children }) => {
+  const user = useSelector(selectLoggedInUser);
   return (
     <div>
       <header className="w-full h-34 lg:h-20 bg-gray-100  top-0 z-50 border-b-[1px] border-b-gray-200 pb-2">
@@ -40,13 +42,20 @@ const Header = ({ children }) => {
             {/* cart button and sign in button */}
             <div className="justify-end flex-shrink-0 hidden item-center lg:flex gap-x-6 lg:gap-x-8 2xl:gap-x-10 ltr:ml-auto rtl:mr-auto">
               <div className="-mt-0.5 flex-shrink-0">
-                <Link to='/signin'>
-                <button className="text-white  xl:text-black">
-                  <PersonOutlineOutlinedIcon style={{ fontSize: "1.7rem" }} />
-                </button>
-                </Link>
+                {!user && <Link to="/signin">SignIn</Link>}
+                {user && (
+                  <Link to="/profile">
+                    <button className="text-white xl:text-black">
+                      <PersonOutlineOutlinedIcon
+                        style={{ fontSize: "1.7rem" }}
+                      />
+                    </button>
+                  </Link>
+                )}
               </div>
+              
               <Cart />
+              <div className="font-semibold text-white xl:text-black"><Link to="/myorder" >My Order</Link></div>
             </div>
           </div>
         </nav>

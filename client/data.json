@@ -493,24 +493,6 @@
           "pinCode": "410208"
         },
         {
-          "name": "ABBAS SARANG",
-          "email": "zahidsarang95@gmail.com",
-          "phone": "9619382967",
-          "street": "1, Taloja Phase 1 Road",
-          "city": "Navi Mumbai",
-          "state": "Maharashtra",
-          "pinCode": "410208"
-        },
-        {
-          "name": "ABBAS SARANG",
-          "email": "zahidsarang95@gmail.com",
-          "phone": "9619382967",
-          "street": "1, Taloja Phase 1 Road",
-          "city": "Navi Mumbai",
-          "state": "Maharashtra",
-          "pinCode": "410208"
-        },
-        {
           "name": "Zahid SARANG",
           "email": "zahidsarang95@gmail.com",
           "phone": "9619382967",
@@ -1442,6 +1424,136 @@
         "pinCode": "410208"
       },
       "id": 12
+    },
+    {
+      "items": [
+        {
+          "imageSrc": "https://images.pexels.com/photos/17715610/pexels-photo-17715610/free-photo-of-art-building-architecture-historical.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.jpeg",
+          "name": "Slim Fit Dress Shirt",
+          "price": 49.9,
+          "descriptions": "Sleek and stylish...",
+          "category": "Men's",
+          "color": "Yellow",
+          "size": "M",
+          "status": "in stock",
+          "discount": "50",
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 25,
+      "totalItems": 1,
+      "user": {
+        "email": "zahid@gmail.com",
+        "password": "Zahid@123",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "Zahid SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          }
+        ]
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "ABBAS SARANG",
+        "email": "zahidsarang95@gmail.com",
+        "phone": "9619382967",
+        "street": "1, Taloja Phase 1 Road",
+        "city": "Navi Mumbai",
+        "state": "Maharashtra",
+        "pinCode": "410208"
+      },
+      "id": 13
+    },
+    {
+      "items": [
+        {
+          "imageSrc": "../assets/products/f3.jpg",
+          "name": "Women's Badge of Sport Tee",
+          "price": 390,
+          "descriptions": "Show your love for sports with this vibrant red Adidas tee, designed exclusively for women who seek style with comfort.",
+          "category": "Women's",
+          "color": "Red",
+          "size": "S",
+          "status": "in stock",
+          "discount": "50",
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 195,
+      "totalItems": 1,
+      "user": {
+        "email": "zahid@gmail.com",
+        "password": "Zahid@123",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "ABBAS SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          },
+          {
+            "name": "Zahid SARANG",
+            "email": "zahidsarang95@gmail.com",
+            "phone": "9619382967",
+            "street": "1, Taloja Phase 1 Road",
+            "city": "Navi Mumbai",
+            "state": "Maharashtra",
+            "pinCode": "410208"
+          }
+        ]
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "ABBAS SARANG",
+        "email": "zahidsarang95@gmail.com",
+        "phone": "9619382967",
+        "street": "1, Taloja Phase 1 Road",
+        "city": "Navi Mumbai",
+        "state": "Maharashtra",
+        "pinCode": "410208"
+      },
+      "id": 14
     }
   ]
 }

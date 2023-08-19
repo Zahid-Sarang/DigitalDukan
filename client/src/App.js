@@ -13,6 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchItemsByUserIdAsync } from "./state/cart/cartSlice";
 import { selectLoggedInUser } from "./state/auth/authSlice";
 import OrderSuccess from "./pages/SuccessPage";
+import UsersOrderPage from "./pages/userInfo/UsersOrderPage";
+import UserProfielPage from "./pages/userInfo/UserProfilePage";
+import { fetchLoggedInUserAsync } from "./state/userInfo/UserInfoSlice";
 function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
@@ -20,6 +23,7 @@ function App() {
   useEffect(() => {
     if (user) {
       dispatch(fetchItemsByUserIdAsync(user.id));
+      dispatch(fetchLoggedInUserAsync(user.id))
     }
   }, [dispatch, user]);
 
@@ -61,6 +65,22 @@ function App() {
             element={
               <Protected>
                 <OrderSuccess />
+              </Protected>
+            }
+          />
+          <Route
+            path="/myorder"
+            element={
+              <Protected>
+                <UsersOrderPage />
+              </Protected>
+            }
+          /> 
+          <Route
+            path="/profile"
+            element={
+              <Protected>
+                <UserProfielPage />
               </Protected>
             }
           />
