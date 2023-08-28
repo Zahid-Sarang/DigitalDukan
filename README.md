@@ -60,3 +60,6 @@ nodemon index.js
 
 // In the client directory
 npm start
+
+
+
