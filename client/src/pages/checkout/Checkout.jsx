@@ -39,7 +39,6 @@ const Checkout = () => {
 
   return (
     <Header>
-     
       <div className="px-4 mx-auto mt-10 max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="px-10 pt-4 bg-gray-100 rounded-[30px] lg:col-span-3">
